@@ -1486,8 +1486,9 @@
                     Size = dim2(1, 0, 0, 0);
                     BackgroundTransparency = 1;
                     TextXAlignment = Enum.TextXAlignment.Left;
+                    TextWrapped = true;
                     BorderSizePixel = 0;
-                    AutomaticSize = Enum.AutomaticSize.XY;
+                    AutomaticSize = Enum.AutomaticSize.Y;
                     TextSize = 16;
                     BackgroundColor3 = rgb(255, 255, 255)
                 });
@@ -1506,7 +1507,7 @@
                         BackgroundTransparency = 1;
                         TextXAlignment = Enum.TextXAlignment.Left;
                         BorderSizePixel = 0;
-                        AutomaticSize = Enum.AutomaticSize.XY;
+                        AutomaticSize = Enum.AutomaticSize.Y;
                         TextSize = 16;
                         BackgroundColor3 = rgb(255, 255, 255)
                     });
@@ -1758,8 +1759,9 @@
                     Size = dim2(1, 0, 0, 0);
                     BackgroundTransparency = 1;
                     TextXAlignment = Enum.TextXAlignment.Left;
+                    TextWrapped = true;
                     BorderSizePixel = 0;
-                    AutomaticSize = Enum.AutomaticSize.XY;
+                    AutomaticSize = Enum.AutomaticSize.Y;
                     TextSize = 16;
                     BackgroundColor3 = rgb(255, 255, 255)
                 });
@@ -1778,7 +1780,7 @@
                         BackgroundTransparency = 1;
                         TextXAlignment = Enum.TextXAlignment.Left;
                         BorderSizePixel = 0;
-                        AutomaticSize = Enum.AutomaticSize.XY;
+                        AutomaticSize = Enum.AutomaticSize.Y;
                         TextSize = 16;
                         BackgroundColor3 = rgb(255, 255, 255)
                     });
@@ -1988,8 +1990,9 @@
                         Size = dim2(1, 0, 0, 0);
                         BackgroundTransparency = 1;
                         TextXAlignment = Enum.TextXAlignment.Left;
+                        TextWrapped = true;
                         BorderSizePixel = 0;
-                        AutomaticSize = Enum.AutomaticSize.XY;
+                        AutomaticSize = Enum.AutomaticSize.Y;
                         TextSize = 16;
                         BackgroundColor3 = rgb(255, 255, 255)
                     });
@@ -2008,7 +2011,7 @@
                             BackgroundTransparency = 1;
                             TextXAlignment = Enum.TextXAlignment.Left;
                             BorderSizePixel = 0;
-                            AutomaticSize = Enum.AutomaticSize.XY;
+                            AutomaticSize = Enum.AutomaticSize.Y;
                             TextSize = 16;
                             BackgroundColor3 = rgb(255, 255, 255)
                         });
@@ -2301,8 +2304,9 @@
                     Size = dim2(1, 0, 0, 0);
                     BackgroundTransparency = 1;
                     TextXAlignment = Enum.TextXAlignment.Left;
+                    TextWrapped = true;
                     BorderSizePixel = 0;
-                    AutomaticSize = Enum.AutomaticSize.XY;
+                    AutomaticSize = Enum.AutomaticSize.Y;
                     TextSize = 16;
                     BackgroundColor3 = rgb(255, 255, 255)
                 });
@@ -2321,7 +2325,7 @@
                         BackgroundTransparency = 1;
                         TextXAlignment = Enum.TextXAlignment.Left;
                         BorderSizePixel = 0;
-                        AutomaticSize = Enum.AutomaticSize.XY;
+                        AutomaticSize = Enum.AutomaticSize.Y;
                         TextSize = 16;
                         BackgroundColor3 = rgb(255, 255, 255)
                     });
@@ -2887,8 +2891,9 @@
                     Size = dim2(1, 0, 0, 0);
                     BackgroundTransparency = 1;
                     TextXAlignment = Enum.TextXAlignment.Left;
+                    TextWrapped = true;
                     BorderSizePixel = 0;
-                    AutomaticSize = Enum.AutomaticSize.XY;
+                    AutomaticSize = Enum.AutomaticSize.Y;
                     TextSize = 16;
                     BackgroundColor3 = rgb(255, 255, 255)
                 });
@@ -3028,8 +3033,9 @@
                         Size = dim2(1, 0, 0, 0);
                         BackgroundTransparency = 1;
                         TextXAlignment = Enum.TextXAlignment.Left;
+                        TextWrapped = true;
                         BorderSizePixel = 0;
-                        AutomaticSize = Enum.AutomaticSize.XY;
+                        AutomaticSize = Enum.AutomaticSize.Y;
                         TextSize = 16;
                         BackgroundColor3 = rgb(255, 255, 255)
                     });

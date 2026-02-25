@@ -1484,7 +1484,7 @@
                     Text = cfg.info and (cfg.name .. '\n<font color="rgb(130,130,130)">' .. cfg.info .. '</font>') or cfg.name;
                     Parent = items[ "toggle" ];
                     Name = "\0";
-                    Size = dim2(1, 0, 0, 0);
+                    Size = dim2(1, -50, 0, 0);
                     BackgroundTransparency = 1;
                     TextXAlignment = Enum.TextXAlignment.Left;
                     TextWrapped = true;
@@ -1859,7 +1859,9 @@
                 items[ "value" ].Text = tostring(cfg.value) .. cfg.suffix
 
                 flags[cfg.flag] = cfg.value
-                cfg.callback(flags[cfg.flag])
+                if not cfg._initializing then
+                    cfg.callback(flags[cfg.flag])
+                end
             end
 
             items[ "slider" ].MouseButton1Down:Connect(function()
@@ -1894,7 +1896,9 @@
                 });
             end 
 
+            cfg._initializing = true
             cfg.set(cfg.default)
+            cfg._initializing = false
             config_flags[cfg.flag] = cfg.set
 
             return setmetatable(cfg, library)
@@ -1950,7 +1954,7 @@
                         Text = cfg.info and (cfg.name .. '\n<font color="rgb(130,130,130)">' .. cfg.info .. '</font>') or cfg.name;
                         Parent = items[ "dropdown_object" ];
                         Name = "\0";
-                        Size = dim2(1, 0, 0, 0);
+                        Size = dim2(1, -(cfg.width + 15), 0, 0);
                         BackgroundTransparency = 1;
                         TextXAlignment = Enum.TextXAlignment.Left;
                         TextWrapped = true;
@@ -2322,6 +2326,10 @@
             local label; 
             if not self.items.right_components then 
                 label = self:label({name = cfg.name, seperator = cfg.seperator})
+            else
+                if self.items["name"] then
+                    self.items["name"].Size = dim2(1, -75, 0, 0)
+                end
             end
 
             local items = cfg.items; do 

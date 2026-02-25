@@ -1480,7 +1480,8 @@
                     FontFace = fonts.small;
                     TextColor3 = rgb(245, 245, 245);
                     BorderColor3 = rgb(0, 0, 0);
-                    Text = cfg.name;
+                    RichText = true;
+                    Text = cfg.info and (cfg.name .. '\n<font color="rgb(130,130,130)">' .. cfg.info .. '</font>') or cfg.name;
                     Parent = items[ "toggle" ];
                     Name = "\0";
                     Size = dim2(1, 0, 0, 0);
@@ -1492,26 +1493,6 @@
                     TextSize = 16;
                     BackgroundColor3 = rgb(255, 255, 255)
                 });
-
-                if cfg.info then 
-                    items[ "info" ] = library:create( "TextLabel" , {
-                        FontFace = fonts.small;
-                        TextColor3 = rgb(130, 130, 130);
-                        BorderColor3 = rgb(0, 0, 0);
-                        TextWrapped = true;
-                        Text = cfg.info;
-                        Parent = items[ "toggle" ];
-                        Name = "\0";
-                        Position = dim2(0, 5, 0, 17);
-                        Size = dim2(1, -10, 0, 0);
-                        BackgroundTransparency = 1;
-                        TextXAlignment = Enum.TextXAlignment.Left;
-                        BorderSizePixel = 0;
-                        AutomaticSize = Enum.AutomaticSize.Y;
-                        TextSize = 16;
-                        BackgroundColor3 = rgb(255, 255, 255)
-                    });
-                end 
                 
                 library:create( "UIPadding" , {
                     Parent = items[ "name" ];
@@ -1753,7 +1734,8 @@
                     FontFace = fonts.small;
                     TextColor3 = rgb(245, 245, 245);
                     BorderColor3 = rgb(0, 0, 0);
-                    Text = cfg.name;
+                    RichText = true;
+                    Text = cfg.info and (cfg.name .. '\n<font color="rgb(130,130,130)">' .. cfg.info .. '</font>') or cfg.name;
                     Parent = items[ "slider_object" ];
                     Name = "\0";
                     Size = dim2(1, 0, 0, 0);
@@ -1765,26 +1747,6 @@
                     TextSize = 16;
                     BackgroundColor3 = rgb(255, 255, 255)
                 });
-                
-                if cfg.info then 
-                    items[ "info" ] = library:create( "TextLabel" , {
-                        FontFace = fonts.small;
-                        TextColor3 = rgb(130, 130, 130);
-                        BorderColor3 = rgb(0, 0, 0);
-                        TextWrapped = true;
-                        Text = cfg.info;
-                        Parent = items[ "slider_object" ];
-                        Name = "\0";
-                        Position = dim2(0, 5, 0, 37);
-                        Size = dim2(1, -10, 0, 0);
-                        BackgroundTransparency = 1;
-                        TextXAlignment = Enum.TextXAlignment.Left;
-                        BorderSizePixel = 0;
-                        AutomaticSize = Enum.AutomaticSize.Y;
-                        TextSize = 16;
-                        BackgroundColor3 = rgb(255, 255, 255)
-                    });
-                end 
 
                 library:create( "UIPadding" , {
                     Parent = items[ "name" ];
@@ -1984,7 +1946,8 @@
                         FontFace = fonts.small;
                         TextColor3 = rgb(245, 245, 245);
                         BorderColor3 = rgb(0, 0, 0);
-                        Text = "Dropdown";
+                        RichText = true;
+                        Text = cfg.info and (cfg.name .. '\n<font color="rgb(130,130,130)">' .. cfg.info .. '</font>') or cfg.name;
                         Parent = items[ "dropdown_object" ];
                         Name = "\0";
                         Size = dim2(1, 0, 0, 0);
@@ -1996,26 +1959,6 @@
                         TextSize = 16;
                         BackgroundColor3 = rgb(255, 255, 255)
                     });
-                    
-                    if cfg.info then 
-                        items[ "info" ] = library:create( "TextLabel" , {
-                            FontFace = fonts.small;
-                            TextColor3 = rgb(130, 130, 130);
-                            BorderColor3 = rgb(0, 0, 0);
-                            TextWrapped = true;
-                            Text = cfg.info;
-                            Parent = items[ "dropdown_object" ];
-                            Name = "\0";
-                            Position = dim2(0, 5, 0, 17);
-                            Size = dim2(1, -10, 0, 0);
-                            BackgroundTransparency = 1;
-                            TextXAlignment = Enum.TextXAlignment.Left;
-                            BorderSizePixel = 0;
-                            AutomaticSize = Enum.AutomaticSize.Y;
-                            TextSize = 16;
-                            BackgroundColor3 = rgb(255, 255, 255)
-                        });
-                    end 
 
                     library:create( "UIPadding" , {
                         Parent = items[ "name" ];
@@ -2298,7 +2241,8 @@
                     FontFace = fonts.small;
                     TextColor3 = rgb(245, 245, 245);
                     BorderColor3 = rgb(0, 0, 0);
-                    Text = cfg.name;
+                    RichText = true;
+                    Text = cfg.info and (cfg.name .. '\n<font color="rgb(130,130,130)">' .. cfg.info .. '</font>') or cfg.name;
                     Parent = items[ "label" ];
                     Name = "\0";
                     Size = dim2(1, 0, 0, 0);
@@ -2310,26 +2254,6 @@
                     TextSize = 16;
                     BackgroundColor3 = rgb(255, 255, 255)
                 });
-
-                if cfg.info then 
-                    items[ "info" ] = library:create( "TextLabel" , {
-                        FontFace = fonts.small;
-                        TextColor3 = rgb(130, 130, 130);
-                        BorderColor3 = rgb(0, 0, 0);
-                        TextWrapped = true;
-                        Text = cfg.info;
-                        Parent = items[ "label" ];
-                        Name = "\0";
-                        Position = dim2(0, 5, 0, 17);
-                        Size = dim2(1, -10, 0, 0);
-                        BackgroundTransparency = 1;
-                        TextXAlignment = Enum.TextXAlignment.Left;
-                        BorderSizePixel = 0;
-                        AutomaticSize = Enum.AutomaticSize.Y;
-                        TextSize = 16;
-                        BackgroundColor3 = rgb(255, 255, 255)
-                    });
-                end 
                 
                 library:create( "UIPadding" , {
                     Parent = items[ "name" ];

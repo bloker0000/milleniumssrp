@@ -68,7 +68,7 @@
 
 -- Library init
     getgenv().library = {
-        directory = "milenium",
+        directory = "scprp_millenium",
         folders = {
             "/fonts",
             "/configs",
@@ -83,7 +83,7 @@
 
     local themes = {
         preset = {
-            accent = rgb(80, 150, 235),
+            accent = rgb(255, 200, 60),
         }, 
 
         utility = {

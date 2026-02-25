@@ -566,6 +566,7 @@
                     BorderColor3 = rgb(0, 0, 0);
                     Size = dim2(0, 196, 1, -25);
                     BorderSizePixel = 0;
+                    ClipsDescendants = true;
                     BackgroundColor3 = rgb(14, 14, 16)
                 });
                 
@@ -579,7 +580,7 @@
                     BackgroundColor3 = rgb(21, 21, 23)
                 });
                 
-                items[ "button_holder" ] = library:create( "Frame" , {
+                items[ "button_holder" ] = library:create( "ScrollingFrame" , {
                     Parent = items[ "side_frame" ];
                     Name = "\0";
                     BackgroundTransparency = 1;
@@ -587,7 +588,13 @@
                     BorderColor3 = rgb(0, 0, 0);
                     Size = dim2(1, 0, 1, -60);
                     BorderSizePixel = 0;
-                    BackgroundColor3 = rgb(255, 255, 255)
+                    BackgroundColor3 = rgb(255, 255, 255);
+                    ScrollBarThickness = 2;
+                    ScrollBarImageColor3 = rgb(44, 44, 46);
+                    CanvasSize = dim2(0, 0, 0, 0);
+                    AutomaticCanvasSize = Enum.AutomaticSize.Y;
+                    ScrollingDirection = Enum.ScrollingDirection.Y;
+                    ClipsDescendants = true
                 }); cfg.button_holder = items[ "button_holder" ];
                 
                 library:create( "UIListLayout" , {
@@ -784,6 +791,7 @@
                     BorderColor3 = rgb(0, 0, 0);
                     Size = dim2(1, -216, 1, -101);
                     BorderSizePixel = 0;
+                    ClipsDescendants = true;
                     BackgroundColor3 = rgb(255, 255, 255)
                 });
                 
@@ -954,7 +962,7 @@
                             --
 
                             -- Tab 
-                                multi_items[ "tab" ] = library:create( "Frame" , {
+                                multi_items[ "tab" ] = library:create( "ScrollingFrame" , {
                                     Parent = library.cache;
                                     BackgroundTransparency = 1;
                                     Name = "\0";
@@ -962,7 +970,13 @@
                                     Size = dim2(1, -20, 1, -20);
                                     BorderSizePixel = 0;
                                     Visible = false;
-                                    BackgroundColor3 = rgb(255, 255, 255)
+                                    BackgroundColor3 = rgb(255, 255, 255);
+                                    ScrollBarThickness = 3;
+                                    ScrollBarImageColor3 = rgb(44, 44, 46);
+                                    CanvasSize = dim2(0, 0, 0, 0);
+                                    AutomaticCanvasSize = Enum.AutomaticSize.Y;
+                                    ScrollingDirection = Enum.ScrollingDirection.Y;
+                                    ClipsDescendants = true
                                 });
                                 
                                 library:create( "UIListLayout" , {
@@ -970,8 +984,7 @@
                                     HorizontalFlex = Enum.UIFlexAlignment.Fill;
                                     Parent = multi_items[ "tab" ];
                                     Padding = dim(0, 7);
-                                    SortOrder = Enum.SortOrder.LayoutOrder;
-                                    VerticalFlex = Enum.UIFlexAlignment.Fill
+                                    SortOrder = Enum.SortOrder.LayoutOrder
                                 });
                                 
                                 library:create( "UIPadding" , {
@@ -1132,7 +1145,8 @@
                         BackgroundTransparency = 1;
                         Name = "\0";
                         BorderColor3 = rgb(0, 0, 0);
-                        Size = dim2(0, 0, cfg.size, 0);
+                        Size = dim2(0, 0, 0, 0);
+                        AutomaticSize = Enum.AutomaticSize.Y;
                         BorderSizePixel = 0;
                         BackgroundColor3 = rgb(255, 255, 255)
                     });
@@ -1162,7 +1176,8 @@
                         Parent = self.items[ "tab" ];
                         BackgroundTransparency = 1;
                         Name = "\0";
-                        Size = dim2(0,0,cfg.size,0);
+                        Size = dim2(1, 0, 0, 0);
+                        AutomaticSize = Enum.AutomaticSize.Y;
                         BorderColor3 = rgb(0, 0, 0);
                         BorderSizePixel = 0;
                         Visible = true;
@@ -1172,7 +1187,6 @@
                     library:create( "UIListLayout" , {
                         FillDirection = Enum.FillDirection.Horizontal;
                         HorizontalFlex = Enum.UIFlexAlignment.Fill;
-                        VerticalFlex = Enum.UIFlexAlignment.Fill;
                         Parent = items[ "tab_parent" ];
                         Padding = dim(0, 7);
                         SortOrder = Enum.SortOrder.LayoutOrder;
@@ -1199,7 +1213,8 @@
                     Name = "\0";
                     Parent = self.items[ "column" ];
                     BorderColor3 = rgb(0, 0, 0);
-                    Size = dim2(0, 0, cfg.size, -3);
+                    Size = dim2(0, 0, 0, 0);
+                    AutomaticSize = Enum.AutomaticSize.Y;
                     BorderSizePixel = 0;
                     BackgroundColor3 = rgb(25, 25, 29)
                 });
@@ -1214,7 +1229,8 @@
                     Name = "\0";
                     Position = dim2(0, 1, 0, 1);
                     BorderColor3 = rgb(0, 0, 0);
-                    Size = dim2(1, -2, 1, -2);
+                    Size = dim2(1, -2, 0, 0);
+                    AutomaticSize = Enum.AutomaticSize.Y;
                     BorderSizePixel = 0;
                     BackgroundColor3 = rgb(22, 22, 24)
                 });
@@ -1224,20 +1240,16 @@
                     CornerRadius = dim(0, 7)
                 });
                 
-                items[ "scrolling" ] = library:create( "ScrollingFrame" , {
-                    ScrollBarImageColor3 = rgb(44, 44, 46);
-                    Active = true;
-                    AutomaticCanvasSize = Enum.AutomaticSize.Y;
-                    ScrollBarThickness = 2;
+                items[ "scrolling" ] = library:create( "Frame" , {
                     Parent = items[ "inline" ];
                     Name = "\0";
-                    Size = dim2(1, 0, 1, -40);
+                    Size = dim2(1, 0, 0, 0);
+                    AutomaticSize = Enum.AutomaticSize.Y;
                     BackgroundTransparency = 1;
                     Position = dim2(0, 0, 0, 35);
                     BackgroundColor3 = rgb(255, 255, 255);
                     BorderColor3 = rgb(0, 0, 0);
-                    BorderSizePixel = 0;
-                    CanvasSize = dim2(0, 0, 0, 0)
+                    BorderSizePixel = 0
                 });
                 
                 items[ "elements" ] = library:create( "Frame" , {

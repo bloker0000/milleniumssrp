@@ -515,7 +515,7 @@
             
             library[ "items" ] = library:create( "ScreenGui" , {
                 Parent = coregui;
-                Name = "\0";
+                Name = "multyhub";
                 Enabled = true;
                 ZIndexBehavior = Enum.ZIndexBehavior.Global;
                 IgnoreGuiInset = true;
@@ -523,7 +523,7 @@
             
             library[ "other" ] = library:create( "ScreenGui" , {
                 Parent = coregui;
-                Name = "\0";
+                Name = "multyhub";
                 Enabled = false;
                 ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
                 IgnoreGuiInset = true;
@@ -531,7 +531,7 @@
 
             library[ "notif_gui" ] = library:create( "ScreenGui" , {
                 Parent = coregui;
-                Name = "\0";
+                Name = "multyhub";
                 Enabled = true;
                 ZIndexBehavior = Enum.ZIndexBehavior.Global;
                 IgnoreGuiInset = true;

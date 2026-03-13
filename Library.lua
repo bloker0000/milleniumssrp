@@ -16,7 +16,7 @@
     local lighting = game:GetService("Lighting")
     local run = game:GetService("RunService")
     local stats = game:GetService("Stats")
-    local coregui = game:GetService("CoreGui")
+    local coregui = (typeof(gethui) == "function" and gethui()) or game:GetService("CoreGui")
     local debris = game:GetService("Debris")
     local tween_service = game:GetService("TweenService")
     local sound_service = game:GetService("SoundService")

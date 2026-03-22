@@ -164,7 +164,10 @@
     local fonts = {}; do
         function Register_Font(Name, Weight, Style, Asset)
             if not isfile(Asset.Id) then
-                writefile(Asset.Id, Asset.Font)
+                task.wait()
+                local fontData = Asset.Font or game:HttpGet(Asset.Url)
+                writefile(Asset.Id, fontData)
+                task.wait()
             end
 
             if isfile(Name .. ".font") then
@@ -190,12 +193,12 @@
         
         local Medium = Register_Font("Medium", 200, "Normal", {
             Id = "Medium.ttf",
-            Font = game:HttpGet("https://github.com/bloker0000/libraries-clone/raw/refs/heads/main/Millenium/Inter_28pt-Medium.ttf"),
+            Url = "https://github.com/bloker0000/libraries-clone/raw/refs/heads/main/Millenium/Inter_28pt-Medium.ttf",
         })
 
         local SemiBold = Register_Font("SemiBold", 200, "Normal", {
             Id = "SemiBold.ttf",
-            Font = game:HttpGet("https://github.com/bloker0000/libraries-clone/raw/refs/heads/main/Millenium/Inter_28pt-SemiBold.ttf"),
+            Url = "https://github.com/bloker0000/libraries-clone/raw/refs/heads/main/Millenium/Inter_28pt-SemiBold.ttf",
         })
 
         fonts = {
@@ -515,7 +518,6 @@
             
             library[ "items" ] = library:create( "ScreenGui" , {
                 Parent = coregui;
-                Name = "multyhub";
                 Enabled = true;
                 ZIndexBehavior = Enum.ZIndexBehavior.Global;
                 IgnoreGuiInset = true;
@@ -523,7 +525,6 @@
             
             library[ "other" ] = library:create( "ScreenGui" , {
                 Parent = coregui;
-                Name = "multyhub";
                 Enabled = false;
                 ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
                 IgnoreGuiInset = true;
@@ -531,7 +532,6 @@
 
             library[ "notif_gui" ] = library:create( "ScreenGui" , {
                 Parent = coregui;
-                Name = "multyhub";
                 Enabled = true;
                 ZIndexBehavior = Enum.ZIndexBehavior.Global;
                 IgnoreGuiInset = true;

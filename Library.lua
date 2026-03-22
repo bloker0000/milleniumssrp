@@ -1859,7 +1859,7 @@
                 items[ "value" ].Text = tostring(cfg.value) .. cfg.suffix
 
                 flags[cfg.flag] = cfg.value
-                if not cfg._initializing then
+                if not cfg._initializing and not library._loading_config then
                     cfg.callback(flags[cfg.flag])
                 end
             end
@@ -2146,7 +2146,7 @@
                 items[ "sub_text" ].Text = isTable and concat(selected, ", ") or selected[1] or ""
                 flags[cfg.flag] = isTable and selected or selected[1]
                 
-                if not cfg._initializing then
+                if not cfg._initializing and not library._loading_config then
                     cfg.callback(flags[cfg.flag]) 
                 end
             end
@@ -2709,7 +2709,9 @@
                 items[ "input" ].Text = string.format("%s, %s, %s, ", library:round(color.R * 255), library:round(color.G * 255), library:round(color.B * 255))
                 items[ "input" ].Text ..= library:round(1 - a, 0.01)
                 
-                cfg.callback(Color, a)
+                if not library._loading_config then
+                    cfg.callback(Color, a)
+                end
             end
             
             function cfg.update_color() 

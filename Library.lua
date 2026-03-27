@@ -380,7 +380,7 @@
             local list = {}
             
             for idx, file in listfiles(library.directory .. "/configs") do
-                local name = file:gsub(library.directory .. "/configs\\", ""):gsub(".cfg", ""):gsub(library.directory .. "\\configs\\", "")
+                local name = file:match("[^/\\]+$"):gsub("%.cfg$", "")
                 list[#list + 1] = name
             end
 

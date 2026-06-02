@@ -518,6 +518,7 @@
             
             library[ "items" ] = library:create( "ScreenGui" , {
                 Parent = coregui;
+                Name = "\0";
                 Enabled = true;
                 ZIndexBehavior = Enum.ZIndexBehavior.Global;
                 IgnoreGuiInset = true;
@@ -525,6 +526,7 @@
             
             library[ "other" ] = library:create( "ScreenGui" , {
                 Parent = coregui;
+                Name = "\0";
                 Enabled = false;
                 ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
                 IgnoreGuiInset = true;
@@ -532,6 +534,7 @@
 
             library[ "notif_gui" ] = library:create( "ScreenGui" , {
                 Parent = coregui;
+                Name = "\0";
                 Enabled = true;
                 ZIndexBehavior = Enum.ZIndexBehavior.Global;
                 IgnoreGuiInset = true;
@@ -594,22 +597,31 @@
                     CanvasSize = dim2(0, 0, 0, 0);
                     AutomaticCanvasSize = Enum.AutomaticSize.Y;
                     ScrollingDirection = Enum.ScrollingDirection.Y;
+                    ScrollingEnabled = true;
+                    Active = true;
+                    ElasticBehavior = Enum.ElasticBehavior.Never;
                     ClipsDescendants = true
                 }); cfg.button_holder = items[ "button_holder" ];
                 
-                library:create( "UIListLayout" , {
+                local button_layout = library:create( "UIListLayout" , {
                     Parent = items[ "button_holder" ];
                     Padding = dim(0, 5);
                     SortOrder = Enum.SortOrder.LayoutOrder
                 });
                 
-                library:create( "UIPadding" , {
+                local button_padding = library:create( "UIPadding" , {
                     PaddingTop = dim(0, 16);
                     PaddingBottom = dim(0, 36);
                     Parent = items[ "button_holder" ];
                     PaddingRight = dim(0, 11);
                     PaddingLeft = dim(0, 10)
                 });
+
+                local function update_button_canvas()
+                    items[ "button_holder" ].CanvasSize = dim2(0, 0, 0, button_layout.AbsoluteContentSize.Y + button_padding.PaddingTop.Offset + button_padding.PaddingBottom.Offset)
+                end
+                update_button_canvas()
+                insert(library.connections, button_layout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(update_button_canvas))
 
                 local accent = themes.preset.accent
                 items[ "title" ] = library:create( "TextLabel" , {
